@@ -1,16 +1,29 @@
 // lib/models/task.dart
+enum Priority {low, medium, high}
+enum Category {personal, work, other}
+
+
+
 class Task {
   String description;
   bool isCompleted;
+  final String id;
+  final (String description, bool isCompleted, Priority priority, Category category) data;
 
-  Task(this.description) : isCompleted = false;
+   Task({
+    required this.id,
+    required String description,
+    Priority priority = Priority.medium,
+    Category category = Category.other,
+  }) : data = (description, false, priority, category);
 
-  void toggleComplete() {
-    isCompleted = !isCompleted;
+  void toggleCompletion() {
+    data.isCompleted = !data.isCompleted;
   }
 
-  @override
+   @override
   String toString() {
-    return '[${isCompleted ? 'x' : ' '}] $description';
+    return 'ID: $id | Description: ${data.description} | Completed: ${data.isCompleted} '
+           '| Priority: ${data.priority} | Category: ${data.category}';
   }
 }

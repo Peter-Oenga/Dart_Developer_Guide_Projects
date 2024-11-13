@@ -1,21 +1,3 @@
-// // lib/main.dart
-
-// import 'dart:io';
-// import 'dart:models/task.dart';
-// import 'services/task_service.dart';
-// import 'utils/input_util.dart';
-
-// void main(){
-//     TaskService taskService = TaskService();
-
-//     while(true) {
-//         printMenu();
-//         String 
-//     }
-// }
-
-
-// lib/main.dart
 import 'dart:io';
 import 'models/task.dart';
 import 'services/task_service.dart';
@@ -26,7 +8,7 @@ void main() {
 
   while (true) {
     printMenu();
-    String choice = InputUtil.getUserInput();
+    String choice = InputUtil.getUserInput('Enter your choice');
 
     switch (choice) {
       case '1':
@@ -50,8 +32,9 @@ void main() {
   }
 }
 
+// Display the main menu to the user
 void printMenu() {
-  print('\nChoose an option:');
+  print('\n=== To-Do List Menu ===');
   print('1. Add Task');
   print('2. View Tasks');
   print('3. Mark Task as Complete');
