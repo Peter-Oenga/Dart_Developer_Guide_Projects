@@ -1,9 +1,0 @@
-name: todo_app
-description: A console-based To-Do List application.
-version: 1.0.0
-
-environment:
-  sdk: '>=2.12.0 <3.0.0'
-
-dependencies:
-  # Add any dependencies here if needed
